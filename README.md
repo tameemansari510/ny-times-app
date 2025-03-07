@@ -50,7 +50,15 @@ The production-ready files will be available in the `build/` directory.
 
 ## Running Tests
 
-### Unit Tests:
+### Unit Tests: 
+
+---
+ 
+> - When running unit test and test coverage command for the first time, press 'a' when prompted, to run all tests.
+> - To view the coverage report, navigate to folder coverage -> Icov-report -> index.html.
+> - Open index.html in browser for better visual.
+
+---
 
 ```sh
 npm test
@@ -67,6 +75,18 @@ yarn test:coverage
 ```
 
 ### End-to-End (E2E) Testing with Cypress:
+
+---
+
+> - To view the cypress report, navigate to folder cypress -> reports -> mochawesome.html.
+> - Open mochawesome.html in browser for better visual.
+> - When running cypress in interactive mode, wait for sometime for the cypress tool to open.
+>   - Select "E2E Testing" option in the welcome screen.
+>   - In the next screen, Choose a browser of your choice and press "Start E2E Testing"
+>   - Select article.cy.ts file from the spec list.
+
+
+---
 
 To open Cypress in interactive mode:
 
@@ -135,6 +155,21 @@ yarn format
 ```
 
 ## Code Quality Analysis
+
+---
+
+> To run sonarqube in local machine do the following steps (before npm run sonar or yarn sonar):
+ -
+> - Download [sonarqube](https://www.sonarsource.com/products/sonarqube/downloads/) (community version)
+> - A folder will be download in .zip format.
+> - Extract the folder.
+> - To start sonarqube in command prompt terminal:
+>   - For windows: Navigate to bin -> windows-x86-64 -> press StartSonar 
+>   - For mac: Navigate to bin -> macosx-universal-64 -> press sonar
+>   - For linux: Navigate to bin ->  linux-x86-64 -> press sonar
+> - Wait for sometime unil you see "SonarQube is operational" message in the command prompt terminal
+
+---
 
 To analyze code quality using SonarQube:
 
