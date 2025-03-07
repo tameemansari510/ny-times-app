@@ -1,0 +1,219 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 7,
+    "passes": 7,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-03-07T12:45:12.503Z",
+    "end": "2025-03-07T12:45:19.253Z",
+    "duration": 6750,
+    "testsRegistered": 7,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "0fdfbbd6-430c-4368-b6c1-d0c83adc544d",
+      "title": "",
+      "fullFile": "cypress\\e2e\\articleList.cy.ts",
+      "file": "cypress\\e2e\\articleList.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7b020419-3123-4903-8b6d-462820af3a4b",
+          "title": "ArticleList Component",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should display the title",
+              "fullTitle": "ArticleList Component should display the title",
+              "timedOut": null,
+              "duration": 2845,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[data-testid=\"article-title\"]').should(\"contain\", \"New York Times Most Popular Articles\"); // Adjust based on your constants\ncy.get('[data-testid^=\"article-card-container\"]').should(\"have.length.at.least\", 1);",
+              "err": {},
+              "uuid": "e7d86341-cd57-4aa9-971a-4e4647901c48",
+              "parentUUID": "7b020419-3123-4903-8b6d-462820af3a4b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "opens article details on button click",
+              "fullTitle": "ArticleList Component opens article details on button click",
+              "timedOut": null,
+              "duration": 776,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[data-testid^=\"article-card-detail-button\"]').first().click();\ncy.get('[data-testid=\"article-detail-modal\"]').should(\"be.visible\");",
+              "err": {},
+              "uuid": "a9df7307-5785-4164-ad9c-26ec73cd0e09",
+              "parentUUID": "7b020419-3123-4903-8b6d-462820af3a4b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "closes the modal when clicking close button",
+              "fullTitle": "ArticleList Component closes the modal when clicking close button",
+              "timedOut": null,
+              "duration": 955,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[data-testid^=\"article-card-detail-button\"]').first().click();\ncy.get('[data-testid=\"article-detail-close-button\"]').click();\ncy.get('[data-testid=\"article-detail-modal\"]').should(\"not.exist\");",
+              "err": {},
+              "uuid": "08e59caa-bf2d-436e-a1d4-02d344baa41d",
+              "parentUUID": "7b020419-3123-4903-8b6d-462820af3a4b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should allow selecting a period",
+              "fullTitle": "ArticleList Component should allow selecting a period",
+              "timedOut": null,
+              "duration": 313,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[data-testid=\"article-period-select-item-select\"]').click();\ncy.get('[data-testid=\"article-period-select-item-menu-7\"]').click();\ncy.get('[data-testid=\"article-period-select-item-select\"]').should(\"contain\", \"Last 7 Days\");",
+              "err": {},
+              "uuid": "61735fb7-02d9-4c6a-873c-c9222a3488a5",
+              "parentUUID": "7b020419-3123-4903-8b6d-462820af3a4b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "shows a loading spinner while fetching articles",
+              "fullTitle": "ArticleList Component shows a loading spinner while fetching articles",
+              "timedOut": null,
+              "duration": 1441,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.intercept(\"GET\", \"https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=l9SYumVdD2UGhcECoNyjTAPIiKhzyw1H\", { delay: 1000 }).as(\"getArticles\");\ncy.get('[data-testid=\"article-load-progress\"]').should(\"exist\");\ncy.wait(\"@getArticles\");\ncy.get('[data-testid=\"article-load-progress\"]').should(\"not.exist\");",
+              "err": {},
+              "uuid": "f7f2cb55-09f2-4933-b09b-d91c3fa70e3a",
+              "parentUUID": "7b020419-3123-4903-8b6d-462820af3a4b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "displays an error message if the API call fails",
+              "fullTitle": "ArticleList Component displays an error message if the API call fails",
+              "timedOut": null,
+              "duration": 106,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.intercept(\"GET\", \"https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=l9SYumVdD2UGhcECoNyjTAPIiKhzyw1H\", { statusCode: 500 }).as(\"getArticles\");\ncy.get('[data-testid=\"article-error-alert\"]').should(\"exist\");",
+              "err": {},
+              "uuid": "d1d7c347-fe03-4fd8-aef7-eb0caee88f93",
+              "parentUUID": "7b020419-3123-4903-8b6d-462820af3a4b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should display an empty message when there are no articles",
+              "fullTitle": "ArticleList Component should display an empty message when there are no articles",
+              "timedOut": null,
+              "duration": 107,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.intercept(\"GET\", \"https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=l9SYumVdD2UGhcECoNyjTAPIiKhzyw1H\", { body: [] }).as(\"getArticlesEmpty\");\ncy.get('[data-testid=\"article-empty\"]').should(\"contain\", \"No articles available.\");",
+              "err": {},
+              "uuid": "f2a2ef8f-5d12-40d9-8a89-33dc9f57af5a",
+              "parentUUID": "7b020419-3123-4903-8b6d-462820af3a4b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e7d86341-cd57-4aa9-971a-4e4647901c48",
+            "a9df7307-5785-4164-ad9c-26ec73cd0e09",
+            "08e59caa-bf2d-436e-a1d4-02d344baa41d",
+            "61735fb7-02d9-4c6a-873c-c9222a3488a5",
+            "f7f2cb55-09f2-4933-b09b-d91c3fa70e3a",
+            "d1d7c347-fe03-4fd8-aef7-eb0caee88f93",
+            "f2a2ef8f-5d12-40d9-8a89-33dc9f57af5a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6543,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
