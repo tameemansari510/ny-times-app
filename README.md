@@ -157,8 +157,7 @@ yarn format
 
 ---
 
-> To run sonarqube in local machine do the following steps (before npm run sonar or yarn sonar):
- -
+> - To run sonarqube in local machine do the following steps (before npm run sonar or yarn sonar):
 > - Download [sonarqube](https://www.sonarsource.com/products/sonarqube/downloads/) (community version)
 > - A folder will be download in .zip format.
 > - Extract the folder.
