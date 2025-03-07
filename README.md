@@ -53,8 +53,7 @@ The production-ready files will be available in the `build/` directory.
 ### Unit Tests: 
 
 ---
- 
-> - When running unit test and test coverage command for the first time, press 'a' when prompted, to run all tests.
+
 > - To view the coverage report, navigate to folder coverage -> Icov-report -> index.html.
 > - Open index.html in browser for better visual.
 
